@@ -1,39 +1,47 @@
 package main;
 
+import java.util.Scanner;
+
 public class Main {
+
 	public static void main(String[] args) {
+		Scanner giris = new Scanner(System.in);
+		double not1, not2, not3;
+		double total;
+		String sonuc;
 
-		// MEEBBBBBB(TR)
-		System.out.println("*******************************************************");
-		System.out.println("------------  Matamatik 13.sýnýf notlarý  ------------");
-		System.out.println("-------------------------------------------------------");
+		System.out.println("|Not hesaplama java|");
+		System.out.println("1.notu giriniz");
+		not1 = giris.nextDouble();
+		System.out.println("2.notu giriniz");
+		not2 = giris.nextDouble();
+		System.out.println("3.notu giriniz");
+		not3 = giris.nextDouble();
 
-		int point0 = 32; // not1
-		int point1 =42; // not2
-		int toplam = point0 + point1;
-		int kalan = toplam / 2;
+		total = not1 + not2 + not3;
+		total /= 3;
 
-		if (kalan > 50) {
+		if (total < 45) {
+			sonuc = "Zayif";
 
-			System.out.println("          ------TEBRÝKLER------");
+		} else if (total < 55) {
+			sonuc = "Gecer";
 
-			System.out.println("             Geçtiðin not=" + kalan);                    //normalde programý süslemem ama olsun dedimmm
-			System.out.println("--------------------------------------------------------");
+		} else if (total < 70) {
+			sonuc = "Orta";
+
+		} else if (total < 85) {
+
+			sonuc = "Iyi";
+
 		} else {
 
-			System.out.println("       -----SENEYE BE KNK ÜZÜLME-----");
-			System.out.println("           Kaldýðýn not=" + kalan);
-			System.out.println("------------------------------------------------------");
+			sonuc = "Pekiyi";
+
 		}
 
-		/*
-		 * 
-		 * 
-		 * burda basit bir þekilde if ve else kullandým Basit bir programlama 20.01.21
-		 * attýðým tarih
-		 * 
-		 * 
-		 * 
-		 */
+		System.out.println("Ortalama:" + total);
+		System.out.println("Buna gore sonuc:" + sonuc);
+
 	}
 }
